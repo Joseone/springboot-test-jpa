@@ -1,10 +1,11 @@
 # springboot-test-jpa
 
+# exception
 org.hibernate.LazyInitializationException: could not initialize proxy - no Session
 
-两种解决办法：
+# I faced the same issue in JPA/Hibernate, and there are 2 ways to solve this issue:
 
-# 第一种
+1/ Turn off the LAZY by default, as following:
 
 @Entity
 @Proxy(lazy = false)
@@ -13,8 +14,7 @@ public class Project {
 }  
 Of course, this way is not recommended because of the performance issue, so you can go to the second way.
 
-# 第二种
-You can put @Transactional at the beginning of your method, it can help you to remain the session, or another understanding, it pass the duty of session to Hibernate, as following:
+2/ You can put @Transactional at the beginning of your method, it can help you to remain the session, or another understanding, it pass the duty of session to Hibernate, as following:
 
 @Test
 @Transactional
