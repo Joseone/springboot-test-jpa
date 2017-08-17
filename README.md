@@ -4,7 +4,8 @@ org.hibernate.LazyInitializationException: could not initialize proxy - no Sessi
 
 两种解决办法：
 
-1. 第一种
+# 第一种
+
 @Entity
 @Proxy(lazy = false)
 public class Project {
@@ -12,7 +13,8 @@ public class Project {
 }  
 Of course, this way is not recommended because of the performance issue, so you can go to the second way.
 
-第二种：You can put @Transactional at the beginning of your method, it can help you to remain the session, or another understanding, it pass the duty of session to Hibernate, as following:
+# 第二种
+You can put @Transactional at the beginning of your method, it can help you to remain the session, or another understanding, it pass the duty of session to Hibernate, as following:
 
 @Test
 @Transactional
