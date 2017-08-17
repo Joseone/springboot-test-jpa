@@ -4,6 +4,7 @@ import com.qianmi.hello.domain.StoreInfo;
 import com.qianmi.hello.domain.StoreJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * description
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
  * @author <a href="mailto:lilonglong@qianmi.com">of2639-李龙龙</a>
  */
 @Service
+@Transactional
 public class StoreService {
 
     @Autowired

@@ -2,7 +2,6 @@ package com.qianmi.hello.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Proxy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +21,6 @@ import java.util.Date;
 @Table(name = "tb_user_scene_rel")
 @Setter
 @Getter
-@Proxy(lazy = false)
 public class StoreInfo {
 
     /**
